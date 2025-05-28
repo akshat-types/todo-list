@@ -10,13 +10,20 @@ const Tasks =() => {
             return[...prev, {id: Math.random(),text: newTask}]
         })
     };
+
+    const deleteTaskHandler = (id) => {
+        setTasks((prev) =>{
+            return prev.filter((task) => task.id != id)
+        })
+    };
+
     return(
         <>
             <div className='Tasks'>
                 <Input onAddTask={addTasksHandler}/>
                 {
                     tasks.map((task) => (
-                        <Card key={task.id} text={task.text} id={task.id}/>
+                        <Card text={task.text} id={task.id} onTaskComplete={deleteTaskHandler}/>
                 ))}
             </div>
         </>

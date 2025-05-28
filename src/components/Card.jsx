@@ -1,11 +1,14 @@
 // src/components/Card.jsx
 // import taskList from '../taskData.jsx'; 
 const Card = (props) => {
+    const handleDelete =() => {
+        props.onTaskComplete(props.id)
+    }; 
   return (
     <>
         <div key={props.id} className="card">
           <p>{props.text}</p>
-          <button>Completed</button>
+          <button onClick={handleDelete}>Completed</button>
         </div>
       
     </>
