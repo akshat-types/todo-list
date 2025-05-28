@@ -1,9 +1,8 @@
 import './App.css'
-import { useState } from 'react';
-import taskList from './taskData.jsx'; 
 import Tasks from './components/Tasks.jsx';
 import Navbar from './components/Navbar.jsx';
-import { BrowserRouter } from 'react-router-dom';
+import About from './components/About.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
@@ -15,7 +14,10 @@ function App() {
           <h2>This is an application</h2>
         </header>
         <main>
-          <Tasks />
+          <Routes>
+            <Route path='/' element={<Tasks />} />
+            <Route path='/about' element={<About />} />
+          </Routes>
         </main>
       </div>
       </BrowserRouter>
