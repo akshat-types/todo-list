@@ -5,10 +5,15 @@ import Card from './Card'
 
 const Tasks =() => {
     const [tasks,setTasks] = useState(taskList);
+    const addTasksHandler = (newTask) => {
+        setTasks((prev) => {
+            return[...prev, {id: Math.random(),text: newTask}]
+        })
+    };
     return(
         <>
             <div>
-                <Input />
+                <Input onAddTask={addTasksHandler}/>
                 {
                     tasks.map((task) => (
                         <Card key={task.id} text={task.text} id={task.id}/>
