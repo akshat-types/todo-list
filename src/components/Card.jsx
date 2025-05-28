@@ -1,5 +1,3 @@
-// src/components/Card.jsx
-// import taskList from '../taskData.jsx'; 
 const Card = (props) => {
     const handleDelete =() => {
         props.onTaskComplete(props.id)
