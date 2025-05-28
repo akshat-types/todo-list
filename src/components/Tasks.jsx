@@ -12,7 +12,7 @@ const Tasks =() => {
     };
     return(
         <>
-            <div>
+            <div className='Tasks'>
                 <Input onAddTask={addTasksHandler}/>
                 {
                     tasks.map((task) => (
